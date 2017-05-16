@@ -1,4 +1,4 @@
 # General
-This is for information unrelated to a specific product development
+This is for information not related to a specific product development.
 
-This README.md is written in MarkDown. It gets everywhere.
+README.md is written in MarkDown. It gets everywhere.
