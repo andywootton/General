@@ -2,17 +2,18 @@
 
 ### Keys
 C- maps to Ctrl on a Windows keyboard  
-M- maps to Alt on a Windows keyboard & Option on Mac 
+M- maps to Alt on a Windows keyboard & Option on Mac  
 
-'The Point' is the current cursor position
-bash emacs, d
+'The region' is the area between 'the mark' & 'the point'  
+'The mark'...  
+'The point' is the current cursor position.  
 ## emacs line editing, including bash 
 ###Navigation keys
 [ Think of the following 3 lines as a diagram ]
 
 C-p (Previous)  
-C-a (stArt of line) M-b (word Back) C-b (Char Back) M-f (Forward) C-e (End of line)  
-C-n (Next)
+C-a (stArt of line) M-b (word Back) C-b (Char Back) C-f (Char Forward) M-f (word Forward) C-e (End of line)  
+C-n (Next)  
 
 C-s         (Search)  
 C-r         (Reverse search)  
@@ -112,22 +113,36 @@ lein repl
 The emacs Cider package https://github.com/clojure-emacs/cider/  
 Can be installed manually by emacs 'M-x package-install' then entering 'cider'.  
 Open a file containing Clojure code then  
-'M-x cider-jack-in'  
+M-x cider-jack-in   
+or  
+C-c M-j  
+
 This runs up 'lein repl headless' and creates a new buffer to interact with it.  
 
+#### paredit-mode
+A minor mode to handle parentheses, double quotes & brackets  
+It can be toggle on/off with M-x paredit-mode  
+M-(         Wrapping surrounds expression after point with parentheses  
+C-RightArrow  
+            Slurping - move right-parenthesis an expession right  
+C-LeftArrow  
+            Unslurping / Barfing - move right-parenthesis an expression left  
+C-M-f       Move forward to opening parenthesis (like M-F for word)
+C-M-b       Move back to closing parenthesis (like M-b for word)
 
 ### Clojure & Cider
-C-x C-e     evaluate expression before point, to the REPL (cider-eval-last-expression)  
-C-u C-x C-e print the result of the evaluation, after point  
+C-x C-e     Evaluate expression before point, to the REPL (cider-eval-last-expression)  
+C-u C-x C-e Print the result of the evaluation, after point  
 
-C-c M-n     sets the namespace as listed at the top of current file, changing the prompt in the REPL window.  
+C-c M-n     Sets the name-space as listed at the top of current file, changing the prompt in the REPL window.  
 
-C-c C-k     compile current file within the REPL session  
+C-c C-k     Compile current i.e 'load (eval)' buffer, within the REPL session  
+C-c C-l     Load (eval) file  
 C-c C-d C-d Display documentation for symbol under point  
 C-c C-d C-a Apropos search; find arbitrary text across function names and documentation
 M-. & M,    Navigate to source code for symbol under point and return to original buffer  
 
-In Cider REPL:  
+###In Cider REPL:  
 C-upArrow  
 C-downArrow cycle through REPL history (a problem on Mac because mapped to Mission Control)
 
