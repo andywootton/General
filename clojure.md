@@ -3,9 +3,8 @@
 I followed the instruction in 'Clojure for the Brave and True' to get a working emacs, CIDER & Leiningen configuration 
 to hack on Clojure. I could now get a REPL by typing:  
 lein repl  
-but I didn't really understand how. I get why it is felt necessary to protect beginners from the truth of the complexity 
-of the Clojure but I'm left feeling I don't know what's going on and I'm not ready to accept that it's all done with magic.
-I'm not even in Lisp yet.
+but I didn't really understand how. I get why beginners may need to be protected from the complexity 
+of the Clojure environment but it's not my first time at the redeo and I'm left feeling that I don't know what's going on. I'm not ready to accept that it's all done with magic. I'm not even in Lisp yet.
 
 https://clojure.org/reference/repl_and_main tells me:  
 
@@ -18,7 +17,7 @@ Where's that then? The Leiningen install script which I stored in ~/bin/leininge
 so I 'cd' there and type:  
 ~/.lein/self-installs$ java -cp leiningen-2.7.1-standalone.jar clojure.main
 
-I'm working on the theory that Clojure is embedded inside the leiningen code. It works! I get a prompt:
+I'm working on the theory that Clojure is embedded inside the Leiningen .jar file. It works! I get a prompt:
 Clojure 1.8.0  
-and I get it much quicker than 'lein repl' would give it, but I'd see more output than just the prompt.
+and I got it much quicker than 'lein repl' would give it, but I've seen less output than.
 I've obviously taken a shortcut.  
