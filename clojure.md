@@ -1,4 +1,4 @@
-Learning Clojure
+# Learning Clojure
 
 I followed the instruction in 'Clojure for the Brave and True' to get a working emacs, CIDER & Leiningen configuration 
 to hack on Clojure. I could now get a REPL by typing:  
@@ -21,4 +21,4 @@ so I 'cd' there and type:
 I'm working on the theory that Clojure is embedded inside the leiningen code. It works! I get a prompt:
 Clojure 1.8.0  
 and I get it much quicker than 'lein repl' would give it, but I'd see more output than just the prompt.
-I've obviously taken a shortcut.
+I've obviously taken a shortcut.  
