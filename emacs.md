@@ -4,9 +4,13 @@
 C- maps to Ctrl on a Windows keyboard  
 M- maps to Alt on a Windows keyboard & Option on Mac  
 
-'The region' is the area between 'the mark' & 'the point'  
-'The mark'...  
 'The point' is the current cursor position.  
+'The mark' is set at one end of a region of text before moving the point.  
+C-<SPC>     (set-mark-command).  
+C-@         the same
+
+'The region' is the area between 'the mark' & 'the point'  
+
 ## emacs line editing, including bash 
 ###Navigation keys
 [ Think of the following 3 lines as a diagram ]
