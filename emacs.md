@@ -1,12 +1,18 @@
 # emacs
 
 ### Keys
-C- maps to Ctrl on a Windows keyboard  
-M- maps to Alt on a Windows keyboard & Option on Mac  
+C- maps to 'Ctrl' on a Windows keyboard  
+M- maps to 'Alt' on a Windows keyboard & 'Option' on Mac  
+
+### The Point, Mark & Region
+'The point' is the current cursor position.
+
+'The mark' is set at one end of a region of text before moving the point.  
+C-<SPC>     (set-mark-command).  
+C-@         the same
 
 'The region' is the area between 'the mark' & 'the point'  
-'The mark'...  
-'The point' is the current cursor position.  
+
 ## emacs line editing, including bash 
 ###Navigation keys
 [ Think of the following 3 lines as a diagram ]
@@ -30,6 +36,14 @@ C-d         Delete character ahead
 M-d         Delete word ahead (kill-word)  
 C-k         Kill to end of line (kill-line)
 
+## C-x C-
+C-x C-f     open File  
+C-x C-s     Save (save-file)  
+C-x C-w     Write(save) to a new filename  
+C-x C-c     quit emacs
+
+C-x C-e     default - Evaluate eLisp
+
 ## Other C-
 
 C-g or C-G  Quit current command  
@@ -44,6 +58,12 @@ C-w         Kill region
 C-y         Yank text from kill-ring
 
 ## C-x char
+
+###buffers
+
+C-x b       create new Buffer (switch-to-buffer)  
+C-x k enter Kill the buffer
+
 ###windows
 C-x u       Undo last command  
 C-x o       switch to Other pane in split window  
@@ -51,19 +71,6 @@ C-x 0       delete current window
 C-x 1       unsplit window  
 C-x 2       split window horizontally  
 C-x 3       split window vertically  
-
-###buffers
-
-C-x b       create new Buffer (switch-to-buffer)  
-C-x k enter Kill the buffer
-
-## C-x C-
-C-x C-f     open File  
-C-x C-s     Save (save-file)  
-C-x C-w     Write(save) to a new filename  
-C-x C-c     quit emacs
-
-C-x C-e     default - Evaluate eLisp
 
 ## Other M- {: style="page-break-before: always" }
 M-y         Replace last yanked text with next item on kill ring
