@@ -59,5 +59,12 @@ Useful for collections of elements with no duplicates
 (conj) works  
 (disj) removes elements from sets
 ## Lists as Code
-(function param1 param2)
+Without a prefix quote, in a Lisp, the first element in a list is treated as an operator or function (IFn.) Other elements are considered data for the operator.
+
+All Clojure code is made of lists. Code is data.
 ## Symbols and Binding
+Clojure uses symbols to represent data, as other languages use variables. Clojure symbols refer to values. The def function allows us to give something a name, via a var. Vars are different to variables as their values are not expected to change during the course of the program.  
+(def developer "Ada")  
+creates a var object in the default namespace, user, for the symbol, developer. The REPL will evaluate developer to "Ada". We could reference the symbol by its namespace, user/developer but don't need to in this case because user is the default for the REPL.
+
+
