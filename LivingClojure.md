@@ -1,4 +1,5 @@
 # Notes on 'Living Clojure' by Carin Meier
+# 1. The Structure of Clojure
 Expressions
 ## Simple values / Literals
 Integer 3 ;; and this is a comment  
@@ -44,7 +45,8 @@ It is more idiomatic to use the key as a function:
 To update maps:
 (assoc)  
 (dissoc)  
-(merge)  
+(merge)
+
 ###set #{}
 Useful for collections of elements with no duplicates
 
@@ -58,13 +60,62 @@ Useful for collections of elements with no duplicates
 
 (conj) works  
 (disj) removes elements from sets
+
 ## Lists as Code
 Without a prefix quote, in a Lisp, the first element in a list is treated as an operator or function (IFn.) Other elements are considered data for the operator.
 
 All Clojure code is made of lists. Code is data.
-## Symbols and Binding
-Clojure uses symbols to represent data, as other languages use variables. Clojure symbols refer to values. The def function allows us to give something a name, via a var. Vars are different to variables as their values are not expected to change during the course of the program.  
-(def developer "Ada")  
-creates a var object in the default namespace, user, for the symbol, developer. The REPL will evaluate developer to "Ada". We could reference the symbol by its namespace, user/developer but don't need to in this case because user is the default for the REPL.
 
+## Symbols and Binding
+Clojure uses symbols to represent data, as other languages use variables. Clojure symbols refer to values. 
+
+The (def) function allows us to give something a name, via a var, globally.
+
+Vars are different to variables as their values are not expected to change during the course of the program.  
+
+(def developer "Ada")  
+creates a var object in the default namespace, user, for the symbol, developer.
+
+The REPL will evaluate developer to "Ada". We could reference the symbol by its namespace, user/developer but don't need to in this case because user is the default namespace for the REPL.
+
+To make a var that isn't global and is temporary, use (let [symbol value])
+"What happens in a let, stays in the let"
+
+(defn) creates vars for functions. It takes the name of the function, a vector of parameters and the body of the function. If there are no parameters, the vector is left empty.
+
+An anonymous function can be expressed with the fn operator. It can be called again by surrounding with parens. There is a shorthand of replacing the fn [] by a # in front of the parens and using numbered percent signs for the parameters.
+
+## Organize Symbols in Namespaces
+You create your own namespace and switch to it using ns. Vars created will now be with this namespace.
+*ns* tells you the current namespace. It is shown between earmuffs, <>, a convention for things that are intended for rebinding (to change.)
+
+Clojure libs are made up these names and symbols associated with namespaces.
+
+There are 3 ways to use libs using require
+(require 'clojure.set)  
+(require '[alice.favfoods :as af])
+(ns wonderland (require '[alice.favfoods :as af]))
+(ns wonderland (require '[alice.favfoods :refer :all]
+                        '[alice.favfoods :refer :all])) but risky
+ 
+Most code will use :as, except clojure.test when common to use directly with namespace being tested.
+
+:refer :all is preferred but use is still acceptable.
+
+"we will take this structure of code and make it move and flow with functional transformations.
+# 2. Flow and Functional Transformations
+Expressions - code that can be evaluated for a result  
+Forms - a valid expression that can be evaluated. "it specifies a correct syntax by being valid."
+
+## Controlling Flow with Logic
+Clojure has boolean data types true and false.
+
+(class true) tells us they are java.lang.Boolean
+
+We can test (true? true)
+(false? false) or (nil? 1)
+
+nil is logically false in tests
+
+# 3. State and Concurrency
 
