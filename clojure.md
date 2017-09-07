@@ -36,6 +36,8 @@ nREPL server started on port 41262 on host 127.0.0.1 - nrepl://127.0.0.1:41262
 REPL-y 0.3.7, nREPL 0.2.12  
 Clojure 1.8.0  
 OpenJDK 64-Bit Server VM 1.8.0_131-8u131-b11-0ubuntu1.16.04.2-b11
+ 
+I seem to have skipped some of Leiningen's environmental set-up.
 
 ## Connecting to a non-standard REPL in the Light Table editor
 https://github.com/LightTable/LightTable/issues/851
@@ -56,5 +58,4 @@ Are you including the lighttable-ops middleware in your repl-options? e.g.
  Javadoc: (javadoc java-object-or-class-here)  
     Exit: Control+D or (exit) or (quit)  
  Results: Stored in vars *1, *2, *3, an exception in *e
- 
-I seem to have skipped some of Leiningen's environmental set-up.
+
