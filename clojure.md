@@ -2,6 +2,10 @@
 
 I followed the instruction in 'Clojure for the Brave and True' to get a working emacs, CIDER & Leiningen configuration to develop in Clojure. I could now get a REPL by typing:
 
+## The REPL
+
+The Read-Execute-Print-Loop can be started with Leiningen
+
 lein repl
 
 but I didn't really understand how. I get why beginners may need to be protected from the complexity 
@@ -44,3 +48,93 @@ OpenJDK 64-Bit Server VM 1.8.0_131-8u131-b11-0ubuntu1.16.04.2-b11
  Results: Stored in vars *1, *2, *3, an exception in *e
  
 I seem to have skipped some of Leiningen's environmental set-up.
+
+## The Clojure Project Environment
+### Upgrade Leiningen
+Keep Leiningen up to date with the command:  
+lein upgrade
+
+### Create a Project
+Create a new Clojure project in the current directory with:  
+lein new my-project
+
+then change default there with:  
+cd my-project
+
+It will have created a directory structure which includes
+
+README.md ; what the project does, usage, licence
+
+doc/intro.md ; documentation of the project
+
+project.clj ; the configuration fie for the project and all its dependencies
+
+src/my_project/core.clj ; main Clojure code file N.B. changes hyphens to under-scores.  
+test/my_project/core_test.clj
+
+It is good practice to change "core" in the name of the last 2 to a meaningful name, then edit each of them so the first line namespace definition matches the new name.
+
+### Dependency Management with Leiningen
+
+By default, Leiningen checks Clojars https://clojars.org/  
+and Maven Central http://search.maven.org/
+
+It stores dependencies on the local machine, by default in your maven home directory e.g. on Mac or Linux this is:
+
+~/.m2/repository/org/clojure/clojure/1.6.0
+
+You can show the tree structure of the libraries and versions that the current project is using with
+
+lein deps :tree
+
+#### Example: camel-snake-kebab
+
+* this_is_snake_case  
+* this-is-kebab-case  
+* ThisIsCamelCase
+
+There is a camel-snake-kebab library in Clojars pp. 90-97 give an example of using it and getting a test to pass.
+
+## Communication with core.async p.99
+
+### Creating an Uberjar
+
+ahead-of-time compilation is useful for Clojure code run from the command line
+
+It uses the :aot keyword in the project.clj file
+
+It creates 2 .jar files in the target directory
+
+.jar
+
+includes the project classes and dependencies but needs a Clojure environment to run in.
+
+-standalone.jar
+
+includes all the Clojure classes it needs, so can be run with  
+
+java -jar
+
+## Web Apps with Clojure & ClojureScript p.111
+
+Clojure library Compojure. It provides routing for a lower-level library called Ring
+
+Create a new project called 'cheshire-cat' using the Compojure template:
+
+lein new compojure cheshire-cat
+
+It creates a normal project structure plus  
+resources/public for the web components and  
+a test file called handler.clj
+
+### Start a ring webserver
+
+lein ring server [ or 'lein ring server-headless', if you don't want a browser to open ]
+
+This produces a "Hello World" message in the browser, on http://localhost:3000/
+
+## Macros p.143
+
+#Part II - Training Program p.151
+
+
