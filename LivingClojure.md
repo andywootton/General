@@ -119,3 +119,50 @@ nil is logically false in tests
 
 # 3. State and Concurrency
 
+# 4.
+# 5.
+# 6. Communication with core.async
+
+# 7. Creating Web Application with Clojure
+Creat a Clojure project with Leiningen  
+Use a Clojure library called Compojure.
+
+## Creating a Web Server with Compojure
+It provides routing for a lower level web application library called Ring.  
+Ring allows web apps to be built in modular components. There is not 1 particular web app framework used in Clojure.  
+
+lein new compojure cheshire-cat
+~/Dropbox/Products/cheshire-cat
+cd cheshire-cat
+
+It creates a resource/public directory for the web app's images, CSS and JavaScript files and a source and test file, handler.clj
+
+There is a project.clj as well as handler.clj
+
+To start a web server for the application, run:
+
+~/Dropbox/Products/cheshire-cat$ lein ring server
+2017-09-07 14:50:04.443:INFO:oejs.Server:jetty-7.6.13.v20130916
+2017-09-07 14:50:04.672:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000
+
+and on http://localhost:3000/, the message "Hello World" is written to a browser window.
+
+Leiningen created a Compojure template called src/cheshire_cat/handler.clj
+
+defroutes creates a sequence of HTTP routes called app-routes which the web app will handle.
+
+GET creates an HTTP get route for the base URL, / and returned the string "Hello World".
+
+Also:route/not-found for a basic 404 handler.
+
+App uses handler/site on all routes. Sets up middleware to handle resource files.  
+There are many options. See the Ring Defaults library github.com/ring-clojure/ring-defaults
+
+The project.clj ties everything together  
+The lein-ring plugin automates common Ring tasks, like starting the web server.
+
+The :ring :handler key tells the startup web server task where to find the main app routes
+
+## Using JSON
+There is a Clojure library called Cheshire that creates JSON out of Clojure data strustures.
