@@ -36,6 +36,20 @@ nREPL server started on port 41262 on host 127.0.0.1 - nrepl://127.0.0.1:41262
 REPL-y 0.3.7, nREPL 0.2.12  
 Clojure 1.8.0  
 OpenJDK 64-Bit Server VM 1.8.0_131-8u131-b11-0ubuntu1.16.04.2-b11
+
+## Connecting to a non-standard REPL in the Light Table editor
+https://github.com/LightTable/LightTable/issues/851
+"I launch "lein repl" in my project's directory and it tells me the address of the nrepl (127.0.0.1:port)  
+I select "Connect to remote nrepl" in LT and put either 127.0.0.1:port or localhost:port and it stays connecting infinitely.  
+If I close the repl it drops the connection (so it seems it can see the actual connection)."
+
+Are you including the lighttable-ops middleware in your repl-options? e.g.
+
+(defproject lttest "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [lein-light-nrepl "0.0.4"]]
+  :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]})
     Docs: (doc function-name-here)  
           (find-doc "part-of-name-here")  
   Source: (source function-name-here)  
