@@ -59,3 +59,4 @@ Are you including the lighttable-ops middleware in your repl-options? e.g.
     Exit: Control+D or (exit) or (quit)  
  Results: Stored in vars *1, *2, *3, an exception in *e
 
+It's perhaps worth noting that to have this work with a remote VPS for example, besides the references mentioned above of :nrepl-options and :dependencies keys, the lein nrepl command is best given with :headless and explicit :host nrepl.somehost.com and probably something along the lines of e.g. :port 12345, to not confine the localhost to be truly local (omission of the :host command line argument and value will result in this behavior, as in that port is not exposed to outside). 
