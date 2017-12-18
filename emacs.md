@@ -8,7 +8,7 @@ M- maps to 'Alt' on a Windows keyboard & 'Option' on Mac
 'The point' is the current cursor position.
 
 'The mark' is set at one end of a region of text before moving the point.  
-C-<SPC>     (set-mark-command).  
+C-space     (set-mark-command).  
 C-@         the same
 
 'The region' is the area between 'the mark' & 'the point'  
@@ -36,27 +36,6 @@ C-d         Delete character ahead
 M-d         Delete word ahead (kill-word)  
 C-k         Kill to end of line (kill-line)
 
-## C-x C-
-C-x C-f     open File  
-C-x C-s     Save (save-file)  
-C-x C-w     Write(save) to a new filename  
-C-x C-c     quit emacs
-
-C-x C-e     default - Evaluate eLisp
-
-## Other C-
-
-C-g or C-G  Quit current command  
-C-h         Help, ? for more options  
-C-o         Insert newline after cursor  
-C-t         Swap the 2 characters at the cursor  
-C-u n char  Insert n copies of char  
-C-/         Undo last command  
-
-C-space     Set the 'mark'. Later, everything between this & 'point' is the 'region'  
-C-w         Kill region  
-C-y         Yank text from kill-ring
-
 ## C-x char
 
 ###buffers
@@ -72,7 +51,28 @@ C-x 1       unsplit window
 C-x 2       split window horizontally  
 C-x 3       split window vertically  
 
-## Other M- {: style="page-break-before: always" }
+## C-x C-
+C-x C-f     open File  
+C-x C-s     Save (save-file)  
+C-x C-w     Write(save) to a new filename  
+C-x C-c     quit emacs
+
+C-x C-e     default - Evaluate eLisp
+
+## Other C- {: style="page-break-before: always" }
+
+C-g or C-G  Quit current command  
+C-h         Help, ? for more options  
+C-o         Insert newline after cursor  
+C-t         Swap the 2 characters at the cursor  
+C-u n char  Insert n copies of char  
+C-/         Undo last command  
+
+C-space     Set the 'mark'. Later, everything between this & 'point' is the 'region'  
+C-w         Kill region  
+C-y         Yank text from kill-ring
+
+## Other M-
 M-y         Replace last yanked text with next item on kill ring
 M-u         Uppercase word at cursor  
 M-l         Lowercase word at cursor  
